@@ -14,7 +14,8 @@ class Employee:
         self.pay = 0
 
     def get_pay(self):
-            return self.pay
+        return self.salary + (self.hours * self.hourly_pay) + (self.commission * self.contracts) + self.bonus
+
 
 
     def __str__(self):
