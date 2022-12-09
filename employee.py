@@ -11,7 +11,7 @@ class Employee:
         self.contracts = contracts
         self.commission = commission
         self.bonus = bonus
-        self.pay = 0
+        self.hourly_pay = 0
 
     def get_pay(self):
         return self.salary + (self.hours * self.hourly_pay) + (self.commission * self.contracts) + self.bonus
