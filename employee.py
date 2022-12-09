@@ -11,28 +11,33 @@ class Employee:
         self.contracts = contracts
         self.commission = commission
         self.bonus = bonus
-        self.hourly_pay = 0
+
 
     def get_pay(self):
-        return self.salary + (self.hours * self.hourly_pay) + (self.commission * self.contracts) + self.bonus
-
+        pay = 0
+        if self.salary:
+            pay += self.salary
+        if self.hours and self.hourly_pay:
+            pay += self.hours * self.hourly_pay
+        if self.contracts and self.commission:
+            pay += self.contracts * self.commission
+        if self.bonus:
+            pay += self.bonus
+        return pay
 
 
     def __str__(self):
-        output = ''
+        output = f'{self.name} works on '
         if self.salary:
-            output = self.name + " works on a monthly salary of " + str(self.salary)
-        else:
-            output = self.name + " works on a contract of " + str(self.hours) + " hours at " + str(self.hourly_pay) + "/hour"
-        if self.contracts:
-            output += " and receives a commission for " + str(self.contracts) + " contract(s) at " + str(self.commission) + "/contract"
-        if self.commission:
-            output += " and receives a bonus commission of " + str(self.bonus)
-        
-        output += ". Their total pay is " + str(self.get_pay()) + "."
+            output += f'a monthly salary of {self.salary} '
+        if self.hours and self.hourly_pay:
+            output += f'a contract of {self.hours} hours at {self.hourly_pay}/hour '
+        if self.contracts and self.commission:
+            output += f'and receives a commission for {self.contracts} contract(s) at {self.commission}/contract. '
+        if self.bonus:
+            output += f'and receives a bonus commission of {self.bonus}.'
+        output += f' Their total pay is {self.get_pay()}.'
         return output
-
-
 
 """class HContract(Salary):
     def __init__(self, name, pay, hourlyRate, numHours):
