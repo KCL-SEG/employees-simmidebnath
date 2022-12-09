@@ -1,33 +1,38 @@
 """Employee pay calculator."""
 """ENTER YOUR SOLUTION HERE!"""
 
-"""class Employee:
-    def __init__(self, name, pay, commission):
+class Employee:
+    def __init__(self, name, salary, hours, hourly_pay, contracts, commission, bonus):
         self.name = name
-        self.pay = pay
-        self.commission = 0
-
-    def get_pay(self):
-        pass
-
-    def __str__(self):
-        return self.name
-    
-"""
-class Salary:
-    def __init__(self, name, pay):
-        self.name = name
-        self.pay = pay
+        self.salary = salary
+        self.hours = hours
+        self.hourly_pay = hourly_pay
+        self.contracts = contracts
+        self.commission = commission
+        self.bonus = bonus
+        self.pay = 0
 
     def get_pay(self):
             return self.pay
 
 
     def __str__(self):
-        return (f"{self.name} works on a monthly salary of {self.pay}. Their total pay is {self.pay}")
+        output = ''
+        if self.salary:
+            output = self.name + " works on a monthly salary of " + str(self.salary)
+        else:
+            output = self.name + " works on a contract of " + str(self.hours) + " hours at " + str(self.hourly_pay) + "/hour"
+        if self.contracts:
+            output += " and receives a commission for " + str(self.contracts) + " contract(s) at " + str(self.commission) + "/contract"
+        if self.commission:
+            output += " and receives a bonus commission of " + str(self.bonus)
+        
+        output += ". Their total pay is " + str(self.get_pay()) + "."
+        return output
 
 
-class HContract(Salary):
+
+"""class HContract(Salary):
     def __init__(self, name, pay, hourlyRate, numHours):
         super().__init__(name, pay)
         self.hourlyRate = hourlyRate
@@ -61,5 +66,3 @@ robbie = Employee('Robbie')
 
 # Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
 ariel = Employee('Ariel')
-
-"""
