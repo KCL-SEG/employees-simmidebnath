@@ -33,9 +33,9 @@ class Employee:
         if self.hours and self.hourly_pay:
             string += f'a contract of {self.hours} hours at {self.hourly_pay}/hour'
         if self.contracts and self.commission:
-            string += f'and receives a commission for {self.contracts} contract(s) at {self.commission}/contract'
+            string += f' and receives a commission for {self.contracts} contract(s) at {self.commission}/contract'
         if self.bonus:
-            string += f'and receives a bonus commission of {self.bonus}'
+            string += f' and receives a bonus commission of {self.bonus}'
         string += f'. Their total pay is {self.get_pay()}.'
         return string
 
