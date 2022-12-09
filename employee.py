@@ -36,7 +36,7 @@ class Employee:
             string += f' and receives a commission for {self.contracts} contract(s) at {self.commission}/contract'
         if self.bonus:
             string += f' and receives a bonus commission of {self.bonus}'
-        string += f'. Their total pay is {self.get_pay()}.'
+        string += f'.  Their total pay is {self.get_pay()}.'
         return string
 
 """class HContract(Salary):
