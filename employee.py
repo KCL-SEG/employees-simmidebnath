@@ -1,5 +1,6 @@
 """Employee pay calculator."""
 """ENTER YOUR SOLUTION HERE!"""
+import re 
 
 class Employee:
     def __init__(self, name, salary, hours, hourly_pay, contracts, commission, bonus):
