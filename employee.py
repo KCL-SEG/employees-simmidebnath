@@ -29,14 +29,14 @@ class Employee:
     def __str__(self):
         string = f'{self.name} works on '
         if self.salary:
-            string += f'a monthly salary of {self.salary} '
+            string += f'a monthly salary of {self.salary}'
         if self.hours and self.hourly_pay:
-            string += f'a contract of {self.hours} hours at {self.hourly_pay}/hour '
+            string += f'a contract of {self.hours} hours at {self.hourly_pay}/hour'
         if self.contracts and self.commission:
-            string += f'and receives a commission for {self.contracts} contract(s) at {self.commission}/contract. '
+            string += f'and receives a commission for {self.contracts} contract(s) at {self.commission}/contract'
         if self.bonus:
-            string += f'and receives a bonus commission of {self.bonus}.'
-        string += f' Their total pay is {self.get_pay()}.'
+            string += f'and receives a bonus commission of {self.bonus}'
+        string += f'. Their total pay is {self.get_pay()}.'
         return string
 
 """class HContract(Salary):
