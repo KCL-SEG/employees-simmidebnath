@@ -31,7 +31,7 @@ class Employee:
         if self.salary:
             output += f'a monthly salary of {self.salary}. '
         if self.hours and self.hourly_pay:
-            output += f'a contract of {self.hours} hours at {self.hourly_pay}/hour. '
+            output += f'a contract of {self.hours} hours at {self.hourly_pay}/hour'
         if self.contracts and self.commission:
             output += f'and receives a commission for {self.contracts} contract(s) at {self.commission}/contract. '
         if self.bonus:
